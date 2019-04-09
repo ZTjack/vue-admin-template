@@ -75,10 +75,6 @@ export default {
     thirdparty: '第三方登录',
     thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！'
   },
-  documentation: {
-    documentation: '文档',
-    github: 'Github 地址'
-  },
   permission: {
     addRole: '新增角色',
     editPermission: '编辑权限',
@@ -89,11 +85,6 @@ export default {
     confirm: '确定',
     cancel: '取消'
   },
-  guide: {
-    description: '引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于',
-    button: '打开引导'
-  },
-
   table: {
     dynamicTips1: '固定表头, 按照表头顺序排序',
     dynamicTips2: '不固定表头, 按照点击顺序排序',
