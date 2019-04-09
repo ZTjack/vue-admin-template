@@ -13,7 +13,7 @@
         </div>
         <div class="bullshit__info">
           版权所有
-          <a class="link-type" href="https://wallstreetcn.com" target="_blank">华尔街见闻</a>
+          <a class="link-type" href="https://XXXX.com" target="_blank">XXXXXX</a>
         </div>
         <div class="bullshit__headline">
           {{ message }}

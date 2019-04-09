@@ -1,25 +1,39 @@
 import Vue from 'vue'
-
-import Cookies from 'js-cookie'
-
-import 'normalize.css/normalize.css' // A modern alternative to CSS resets
-
-import Element from 'element-ui'
-import './styles/element-variables.scss'
-
-import '@/styles/index.scss' // global css
-
 import App from './App'
 import store from './store'
 import router from './router'
 
-import i18n from './lang' // Internationalization
-import './icons' // icon
-import './permission' // permission control
+// A modern alternative to CSS resets
+import 'normalize.css/normalize.css'
+
+// ElementUI
+import Element from 'element-ui'
+import './styles/element-variables.scss'
+
+// global css
+import '@/styles/base.scss'
+
+// permission control
+import './permission'
+
+// rewrite errorHanlder collect all errors in state.logs
 import './utils/errorLog' // error log
 
-import * as filters from './filters' // global filters
+/* ---------Below can be choose to removew---------- */
 
+// Internationalization
+import i18n from './lang'
+import './icons'
+import Cookies from 'js-cookie'
+
+// global filters
+import * as filters from './filters'
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+// TODO: know about mockJS
 import { mockXHR } from '../mock' // simulation data
 
 // mock api in github pages site build
@@ -30,10 +44,7 @@ Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
 })
 
-// register global utility filters.
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+/* ---------Above can be choose to removew---------- */
 
 Vue.config.productionTip = false
 
