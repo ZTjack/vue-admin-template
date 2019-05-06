@@ -5,7 +5,7 @@ import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
+  baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url，存在 .evn.XXXXX 文件中
   withCredentials: true, // 跨域请求时发送 cookies
   timeout: 5000 // request timeout
 })
@@ -14,6 +14,7 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // Do something before request is sent
+    // Due to the backend design, if useing cookie directly, below code can be removed
     if (store.getters.token) {
       // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
       config.headers['X-Token'] = getToken()
@@ -28,6 +29,7 @@ service.interceptors.request.use(
 )
 
 // response interceptor
+// 假如觉得axios包装的data，message这些结构复杂，可以在这里做一次返回指的response的，这样就不用每次都res.data
 service.interceptors.response.use(
   /**
    * If you want to get information such as headers or status

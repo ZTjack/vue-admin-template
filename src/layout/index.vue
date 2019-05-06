@@ -16,8 +16,15 @@
 </template>
 
 <script>
+// 右边悬浮的蓝色配置ICCON,配置全局颜色什么的
 import RightPanel from '@/components/RightPanel'
+// 这个就是各个布局了
+// navbar: 面包屑那一块
+// sideBar: 左边的导航
+// TagsView: 多开窗口部分
+// Settings: 全局配置
 import { Navbar, Sidebar, AppMain, TagsView, Settings } from './components'
+// 各个component公共部分喽
 import ResizeMixin from './mixin/ResizeHandler'
 import { mapState } from 'vuex'
 
